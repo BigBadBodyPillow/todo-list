@@ -53,7 +53,7 @@ export default function Dashboard() {
       setNewTask('');
       setErrorMessage('');
     } catch (err) {
-      setErrorMessage(err.response?.data?.error || 'Failed to add task');
+      setErrorMessage(err.response?.data?.error || 'Failed to add task.');
     }
   };
 
@@ -61,7 +61,7 @@ export default function Dashboard() {
   const handleDelete = async (id) => {
     try {
       await api.delete(`/todos/${id}`);
-      //new array in state without the deleted task
+      //new array from state without the deleted task
       setTasks((prev) =>
         prev.filter(
           (taskWithADifferentNameIdk) => taskWithADifferentNameIdk._id !== id
@@ -96,7 +96,7 @@ export default function Dashboard() {
       cancelEdit();
       setErrorMessage('');
     } catch (err) {
-      setErrorMessage(err.response?.data?.error || 'Failed to update task');
+      setErrorMessage(err.response?.data?.error || 'Failed to update task.');
     }
   };
 

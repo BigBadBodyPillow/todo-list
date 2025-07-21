@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     setErrorMessage('');
     if (!email || !password) {
-      setErrorMessage('All fields are required');
+      setErrorMessage('All fields are required.');
       return;
     }
 
@@ -26,7 +26,7 @@ export default function Login() {
       localStorage.setItem('token', data.token);
       navigate('/dashboard');
     } catch (err) {
-      setErrorMessage(err.response?.data?.error || 'Login failed');
+      setErrorMessage(err.response?.data?.error || 'Login failed.');
     }
   };
 
