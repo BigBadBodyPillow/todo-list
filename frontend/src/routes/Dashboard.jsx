@@ -61,7 +61,12 @@ export default function Dashboard() {
   const handleDelete = async (id) => {
     try {
       await api.delete(`/todos/${id}`);
-      setTasks((prev) => prev.filter((t) => t._id !== id));
+      //new array in state without the deleted task
+      setTasks((prev) =>
+        prev.filter(
+          (taskWithADifferentNameIdk) => taskWithADifferentNameIdk._id !== id
+        )
+      );
     } catch (err) {
       setErrorMessage('Failed to delete task');
     }
