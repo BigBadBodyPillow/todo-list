@@ -1,42 +1,88 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
   text-align: center;
+  box-sizing: border-box;
+  margin-block: 5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+main {
+  width: 90vw;
+  max-width: 1000px;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: rga(11, 11, 11);
+  border-radius: 16px;
+
+  border: 1px solid var(--border_colour);
+  box-shadow: 0 0px 5px rgba(255, 255, 255, 0.07);
+  padding: 2rem 2.5rem;
+
+  position: relative;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+main h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--button_colour);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--button_colour_hover);
+}
+button:active {
+  opacity: 0.75;
+}
+
+input[type='text'] {
+  cursor: pointer;
+  font-family: inherit !important;
+  height: 4ch;
+  padding-left: 1em;
+  border-radius: 6px;
+  background-color: rgb(31, 31, 31);
+  border: 1px solid rgba(204, 204, 204, 0.2);
+  color: inherit;
+}
+input[type='checkbox'] {
+  cursor: pointer;
+}
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 1.5rem;
+}
+hr {
+  margin-top: 2rem;
+  border-radius: 100vh;
+  opacity: 0.2;
+}
+.filter-container {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

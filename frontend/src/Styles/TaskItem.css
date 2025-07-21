@@ -1,0 +1,85 @@
+.task-list li {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: rgb(21, 21, 21);
+  border: 1px solid transparent;
+  box-shadow: inset 0 transparent;
+
+  position: relative;
+
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-list li:hover {
+  border: 1px solid rgba(204, 204, 204, 0.2);
+  box-shadow: inset 0 0px 24px rgba(255, 255, 255, 0.1);
+}
+.task-list li:hover::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  /* border: 1px solid red; */
+  box-shadow: 0 0px 24px rgba(255, 255, 255, 0.1);
+}
+
+.task-content {
+  overflow-wrap: break-word;
+  text-align: left;
+
+  /* margin: 0; */
+  flex: 1;
+  margin-right: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+.task-list input {
+  flex: 1;
+  margin-right: 1rem;
+  cursor: text;
+  font: inherit;
+  /* this is some magic numbereing
+  which could be fixed but i think its fine...
+  
+  the p seems to have a margin and i added a margin 
+  to this to try to make it even.
+  5 makes the element smaller and 6 makes it bigger
+  */
+  margin: 5.6px;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+.button-group button {
+  margin: 0;
+  flex-shrink: 0;
+  /* to stop sizes changing when editing */
+  min-width: 6rem;
+}
+@media (max-width: 600px) {
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .button-group button {
+    padding: 0.5rem;
+    width: inherit;
+  }
+}
