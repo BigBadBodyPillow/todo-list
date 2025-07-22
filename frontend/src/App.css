@@ -1,17 +1,20 @@
 #root {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   box-sizing: border-box;
   margin-block: 5rem;
 }
-
+body {
+  overflow: hidden;
+}
 main {
   width: 90vw;
   max-width: 1000px;
 
   margin: 0 auto;
   box-sizing: border-box;
-  background: rga(11, 11, 11);
+  background: rgb(11, 11, 11);
   border-radius: 16px;
 
   border: 1px solid var(--border_colour);
@@ -20,6 +23,8 @@ main {
 
   position: relative;
 }
+/* body {
+} */
 
 main h2 {
   margin-top: 1.5rem;

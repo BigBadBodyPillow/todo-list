@@ -14,21 +14,23 @@ const token = localStorage.getItem('token');
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* if there is a token, go to dashboard by default */}
-        <Route
-          path="/"
-          element={<Navigate to={token ? '/dashboard' : '/login'} />}
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/dashboard"
-          element={token ? <Dashboard /> : <Navigate to="/login" />}
-        />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Routes>
+          {/* if there is a token, go to dashboard by default */}
+          <Route
+            path="/"
+            element={<Navigate to={token ? '/dashboard' : '/login'} />}
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/dashboard"
+            element={token ? <Dashboard /> : <Navigate to="/login" />}
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

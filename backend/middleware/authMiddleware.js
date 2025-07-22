@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-// check if authenticated
 module.exports.requireAuth = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   // unautoerized
