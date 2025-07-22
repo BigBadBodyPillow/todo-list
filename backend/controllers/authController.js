@@ -25,6 +25,7 @@ exports.login = async (req, res) => {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
 
+  //payload/secret key
   const token = jwt.sign(
     { email: user.email, id: user._id },
     process.env.JWT_SECRET

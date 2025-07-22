@@ -27,7 +27,9 @@ export default function Register() {
     const errors = {};
     if (!values.email) {
       errors.email = 'Email is required';
-    } else if (!values.email.endsWith('@gmail.com')) {
+    } 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+    else if (!values.email.endsWith('@gmail.com')) {
       errors.email = 'Email must end with @gmail.com';
     }
 
@@ -48,10 +50,12 @@ export default function Register() {
         onSubmit={handleSubmit}
       >
         <Form className="register-form">
+          {/* email */}
           <label htmlFor="email">Email</label>
           <Field type="email" name="email" placeholder="Gmail" />
           <ErrorMessage name="email" component="div" className="error" />
 
+          {/* password */}
           <label htmlFor="password">Password</label>
           <Field type="password" name="password" placeholder="Password" />
           <ErrorMessage name="password" component="div" className="error" />
